@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import Pagination from "@material-ui/lab/Pagination";
 import { Box, ThemeProvider } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
-import useStyles from './styles'
 
 const darkTheme = createTheme({
   palette: {
@@ -16,7 +15,6 @@ const darkTheme = createTheme({
 
 
 export default function Home() {
-  const classes = useStyles()
   // Get Current Posts
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,7 +25,7 @@ export default function Home() {
   }, [currentPage]);
 
   // Change Page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   useEffect(() => {
     const fetchPosts = async () => {
